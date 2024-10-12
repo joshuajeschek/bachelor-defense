@@ -1,0 +1,31 @@
+name: Publish Latest
+
+on:
+  push:
+   branches:
+     - main
+
+jobs:
+  make:
+   runs-on: ubuntu-latest
+   steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - uses: xu-cheng/texlive-action/full@v1
+      with:
+        run: |
+          make beamer
+          mv beamer.pdf hauptseminar-beamer.pdf
+    - name: upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Hauptseminar Präsentation.pdf
+        path: hauptseminar-beamer.pdf
+    - name: get seconds since epoch
+      run: echo "::set-output name=stamp::$(date +%s)"
+      id: time
+    - uses: ncipollo/release-action@v1
+      with:
+        tag: ${{ steps.time.outputs.stamp }}
+        artifacts: hauptseminar-beamer.pdf

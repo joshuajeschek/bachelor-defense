@@ -1,0 +1,62 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{tikz} % venn diagram
+% \usepackage{enotez} % image sources (instead of endnotes for linking)
+\usepackage{pgfplotstable} % csv to table
+\usepackage[style=apa,backend=biber,natbib]{biblatex}
+\usepackage{bookmark}
+
+% currentname
+\usepackage{nameref}
+\makeatletter
+\newcommand*{\currentsectionname}{\@currentlabelname}
+\makeatother
+
+% load TUC templates, set color scheme to IF
+\usetheme[fakcolor=if]{tuc2019}
+\mode<article>{\usepackage{beamerarticletuc2019}}
+
+\addbibresource{bibliography.bib}
+\usetikzlibrary{calc}
+\usepgfplotslibrary{statistics} % Boxplots
+
+% colors
+\definecolor{s4d-blue}{HTML}{055DA9}
+\definecolor{plot1}{HTML}{8DC144}
+\colorlet{plot2}{s4d-blue}
+\definecolor{plot3}{HTML}{84689B}
+\definecolor{plot4}{HTML}{CF461C}
+
+% deactivate navigation
+\setbeamertemplate{navigation symbols}{}
+
+% metadata
+\newcommand{\Title}{Bachelorarbeit: Blockbasierte Daten-Konvertierung}
+\newcommand{\ShortTitle}{Blockbasierte Daten-Konvertierung}
+\title[\ShortTitle]{\Title}
+\subtitle{Einschätzung der empfundenen Produktivitätssteigerung im Umgang mit Umweltdaten}
+\author{Joshua Jeschek}
+\date{16. Oktober 2024}
+\institute[TUC]{TU Chemnitz}
+\titlegraphic{\includegraphics[height=0.19\textheight]{tuc2019/logo/tuc_green}}
+% \tucurl{}
+
+
+\begin{document}
+\tucthreeheadlines{}
+\input{content/title}
+\tuctwoheadlines{}
+\input{content/structure}
+\section{Theoretische Grundlagen}
+\input{content/theory-s4t}
+\input{content/theory-ogc}
+\input{content/theory-related}
+\section{Entwicklung und Usability-Studie}
+\input{content/study-editor}
+\input{content/study-methods}
+\input{content/study-results}
+\section{Diskussion}
+\input{content/discussion}
+\input{content/bibliography}
+\end{document}

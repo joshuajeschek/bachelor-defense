@@ -1,0 +1,12 @@
+/*.pdf
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.bbl
+*.blg
+*.ent
+*.run.xml
+*.bcf

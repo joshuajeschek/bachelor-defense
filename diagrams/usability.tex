@@ -1,0 +1,18 @@
+\pgfplotstableread[col sep=comma]{assets/study-results.csv}\datatable
+\centering
+\resizebox{.95\textheight}{!}{%
+  \begin{tikzpicture}
+    \begin{axis}[
+        boxplot/draw direction=y,
+        boxplot/every median/.style={ultra thick},
+        xtick={1,2},
+        xticklabels={Vorversion, Block-Editor},
+        ytick={1,...,10},
+        ymin=1,
+        ylabel={Einfachheit der Benutzung},
+      ]
+      \addplot+ [boxplot, plot1] table [y=prev] {\datatable};
+      \addplot+ [boxplot, plot2] table [y=ges] {\datatable};
+    \end{axis}
+  \end{tikzpicture}
+}

@@ -1,0 +1,19 @@
+\pgfplotstableread[col sep=comma]{assets/study-results.csv}\datatable
+\centering
+\resizebox{.95\textheight}{!}{%
+  \begin{tikzpicture}
+    \begin{axis}[
+        boxplot/draw direction=y,
+        boxplot/every median/.style={ultra thick},
+        xtick={1,2,3},
+        xticklabels={Szenario 1, Szenario 2, Szenario 3},
+        ytick={1,...,7},
+        ymin=1,
+        ylabel={SEQ},
+      ]
+      \addplot+ [boxplot, plot1] table [y=a] {\datatable};
+      \addplot+ [boxplot, plot2] table [y=b] {\datatable};
+      \addplot+ [boxplot, plot3] table [y=c] {\datatable};
+    \end{axis}
+  \end{tikzpicture}
+}

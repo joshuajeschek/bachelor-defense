@@ -1,0 +1,60 @@
+\tikzstyle{s4dArrow}=[->, line width=1.5mm, s4d-blue]
+\centering
+\resizebox{.95\textwidth}{!}{%
+  \begin{tikzpicture}
+    \node (s4dImg) at (8, -6)
+    [inner sep=0, outer sep=0]
+    {\includegraphics[height=4cm]{assets/s4t.png}};
+
+    \node (s4d) at ($(s4dImg.center) + (0.15,0)$)
+    [align=center, minimum width=3.1cm, minimum height=4.25cm]
+    {};
+
+    \node (s4dReality) at (s4d.north east)
+    [anchor=south east, align=center]
+    {\huge Realitäts-\\\huge modell};
+
+    \node (s4dImport) at ($(s4d.west) - (5,0)$)
+    [anchor=east, align=center]
+    {\huge Import};
+
+    \node (s4dScenarios) at ($(s4d.east) + (5,0)$)
+    [anchor=west, align=center, minimum width=3.5cm]
+    {\huge Simplex\\\huge Szenarios};
+
+    \node (s4dService) at (s4dScenarios |- s4dReality.base)
+    [anchor=base, align=center, minimum width=3.5cm]
+    {\huge Simplex\\\huge Service};
+
+    \draw [s4dArrow]
+    (s4dImport) edge node (importArrow) {} (s4d)
+    (s4d) edge node (scenarioArrow) {} (s4dScenarios)
+    (s4dReality) edge (s4dService)  (s4dScenarios) edge (s4dService);
+
+    \node (block1) at ($(importArrow.center) - (0,2)$)
+    [align=center]
+    {\Large Konvertierung zu\\\Large Realitätsmodell};
+
+    \node (block2) at ($(scenarioArrow.center) - (0,2)$)
+    [align=center]
+    {\Large Zusammenstellung von\\\Large Anwendungsfällen};
+
+    \node (importCircle) at (s4dImport.center)
+    [shape=circle, minimum width=7cm]
+    {};
+
+    \node (i1) at (importCircle.140) {\Large{}.shp};
+    \node (i2) at (importCircle.160) {\Large{}.json};
+    \node (i3) at (importCircle.180) {\Large{}.csv};
+    \node (i4) at (importCircle.200) {\Large{}API};
+    \node (i5) at (importCircle.220) {\Large{}\dots};
+
+    \draw [s4dArrow, line width=.5mm]
+    (i1) edge (s4dImport)
+    (i2) edge (s4dImport)
+    (i3) edge (s4dImport)
+    (i4) edge (s4dImport)
+    (i5) edge (s4dImport);
+
+  \end{tikzpicture}
+}

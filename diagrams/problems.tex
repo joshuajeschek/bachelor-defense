@@ -1,0 +1,82 @@
+\colorlet{presentation}{plot1}
+\colorlet{interaction}{plot2}
+\colorlet{content}{plot3}
+\colorlet{technical}{plot4}
+\centering
+\resizebox{.75\textheight}{!}{%
+  \begin{tikzpicture}
+    \begin{axis}[
+        xbar=0pt,
+        xmajorgrids=true,
+        xtick={0,...,10},
+        xmin=0,
+        xmax=6,
+        xlabel={Absolute Häufigkeit},
+        /pgf/bar shift=0pt,
+        legend style={legend cell align=left},
+        legend pos=south east,
+        axis y line*=none,
+        axis x line*=bottom,
+        tick label style={font=\footnotesize},
+        legend style={font=\footnotesize},
+        label style={font=\footnotesize},
+        width=.6\textwidth,
+        bar width=3.5mm,
+        ymin=1,
+        ytick={1,...,20},
+        ytick style={draw=none},
+        yticklabels={
+            {Übersichtlichkeit Funktionsliste},
+            {Präfix von Objektklassen},
+            {Details zu Funktionen},
+            {Benennung Abfragbare Felder},
+            {Probleme mit Scrollen},
+            {Zugriff auf die Quelldaten},
+            {Automatische Typ-Filterung},
+            {Angabe von statischen Werten},
+            {Auswahl von Überladungen},
+            {Benennung rechter Bereich},
+            {Benennung des Speichern-Buttons},
+            {Parameterübernahme bei Überladungen},
+            {Drag and Drop},
+            {Ersetzen von Einträgen},
+            {Details zu Parametern},
+            {Metadaten von Szenario-Feldern},
+            {Anzeige von Attributen in Ziel},
+            {Datentyp von Szenario-Feldern},
+            {Symbole für Datentypen},
+            {Bedienreihenfolge von Funktionen},
+          },
+        area legend,
+        y=6mm,
+        enlarge y limits={abs=0.625},
+        every axis plot/.append style={fill}
+      ]
+      \addplot[interaction]  coordinates {(0,0)};  \addlegendentry{Interaktion (8)}
+      \addplot[presentation] coordinates {(0,0)};  \addlegendentry{Darstellung (7)}
+      \addplot[content]      coordinates {(0,0)};  \addlegendentry{Inhalt (4)}
+      \addplot[technical]    coordinates {(0,0)};  \addlegendentry{Technisch (1)}
+
+      \addplot[presentation] coordinates {(1,1)};  % Übersichtlichkeit Funktionsliste
+      \addplot[content]      coordinates {(2,2)};  % Präfix von Objektklassen
+      \addplot[content]      coordinates {(2,3)};  % Details zu Funktionen
+      \addplot[presentation] coordinates {(2,4)};  % Benennung Abfragbare Felder
+      \addplot[technical]    coordinates {(3,5)};  % Probleme mit Scrollen
+      \addplot[content]      coordinates {(3,6)};  % Zugriff auf die Quelldaten
+      \addplot[interaction]  coordinates {(3,7)};  % automatische Typ-Filterung
+      \addplot[interaction]  coordinates {(3,8)};  % Angabe von statischen Werten
+      \addplot[interaction]  coordinates {(3,9)};  % Auswahl von Überladungen
+      \addplot[presentation] coordinates {(4,10)}; % Benennung rechter Bereich
+      \addplot[presentation] coordinates {(4,11)}; % Benennung des Speichern-Buttons
+      \addplot[interaction]  coordinates {(4,12)}; % Parameterübernahme bei Überladungen
+      \addplot[interaction]  coordinates {(4,13)}; % Drag and Drop
+      \addplot[interaction]  coordinates {(4,14)}; % Ersetzen von Einträgen
+      \addplot[content]      coordinates {(5,15)}; % Details zu Parametern
+      \addplot[presentation] coordinates {(5,16)}; % Metadaten von Szenario-Feldern
+      \addplot[presentation] coordinates {(5,17)}; % Anzeige von Attributen in Ziel
+      \addplot[interaction]  coordinates {(5,18)}; % Datentyp von Szenario-Feldern
+      \addplot[presentation] coordinates {(6,19)}; % Symbole für Datentypen
+      \addplot[interaction]  coordinates {(6,20)}; % Bedienreihenfolge von Funktionen
+    \end{axis}
+  \end{tikzpicture}
+}
