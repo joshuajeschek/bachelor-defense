@@ -10,3 +10,5 @@
 *.ent
 *.run.xml
 *.bcf
+svg-inkscape/
+
