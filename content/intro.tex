@@ -1,8 +1,38 @@
-\section*{\ShortTitle}
-\subsection*{Zielsetzung}
 \begin{frame}
-  \note{
+
+  \begin{itemize}
+    \item Große Komplexität im Bereich der Umweltdaten.\\($m \times n$ Transformationen)
+    \item Starke Vereinfachung durch Sekundärsystem Simplex4TwIS.\\($m + n$ Transformationen)
+  \end{itemize}
+
+  \newtheorem{pro}{Problemstellung}
+  \begin{pro}
     \begin{itemize}
+      \item Weiterhin wird manuelle Eingabe von SQL benötigt.
+      \item Kompliziert für Fachexpert:innen ohne technische Kenntnisse.
+      \item Anfällig für Tippfehler.
+      \item Struktur der Eingangsdaten muss bekannt sein.
     \end{itemize}
+  \end{pro}
+
+  \Note{
+    \item Komplexität durch viele Primärsysteme, die Daten erfassen und heterogene Datensätze erzeugen
+    \item viele Formate, sowohl in Eingangsdaten als auch Ausgabeformate
+    \item Ausgabeformate müssen oft Daten aus verschiedenen Bereichen kombinieren, komplexe Datentransformationen ($m \times n$, jedes Eingangsformat könnte in jedem Ausgabeformat benötigt werden)
+    \item Sekundärssystem Simplex4TwIS vereinfacht,
+    \item harmonisierte Speicherung, ermöglicht wiederholbare Imports und Exports, $m$ Importe, $n$ Exporte \textrightarrow $m + n$
   }
+
+\end{frame}
+
+\begin{frame}
+
+  \newtheorem{goal}{Zielsetzung}
+  \begin{goal}
+    \begin{itemize}
+      \item Entwicklung eines Block-Editors.
+      \item Durchführung einer Usability-Studie.
+    \end{itemize}
+  \end{goal}
+
 \end{frame}
