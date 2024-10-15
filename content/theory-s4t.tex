@@ -1,4 +1,5 @@
 \subsection{Simplex4TwIS}
+
 \begin{frame}
   \frametitle{\currentsectionname}
 
@@ -7,11 +8,28 @@
     \caption{Datenverarbeitung in Simplex4TwIS.}
   \end{figure}
 
-  \note{
-    \begin{itemize}
+  \Note{
       \item betrachten Simplex4TwIS aus Sicht der Daten, sieht so aus
       \item Aus verschiedenen Dateiformaten
-    \end{itemize}
+  }
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{itemize}
+    \item \textbf{Realitätsmodell}: Objektorientiertes und graphenbasiertes Datenmodell.
+      \begin{itemize}
+        \item \textbf{Harmonisiert}: Objekte, Attribute und Verbindungen besitzen immer gleiche Datenstrukturen.
+        \item \textbf{Atomar}: Jede Dateneinheit wird als Objektklasse abgebildet.
+      \end{itemize}
+  \end{itemize}
+
+  \Note{
+    \item Standardfelder: Schlüssel immer gleich, können jedoch durch zusätzliche Metadaten wie Name und Kommentar weiter beschrieben werden
+    \item zusätzliche Informationen über Sachattribute, welche in den Metadaten über Standardfelder beschrieben werden
+    \item Datenmodell orientiert sich nicht an fachspezifischen Anforderungen
+    \item anwendungsspezifische Auswertungen basierend auf Realitätsmodell führen dazu dass keine fachspezifischen Modelle mehr benötigt werden
   }
 
 \end{frame}
