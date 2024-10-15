@@ -2,9 +2,67 @@
 \begin{frame}
   \frametitle{\currentsectionname}
 
-  % \note{
-  %   \begin{itemize}
-  %   \end{itemize}
-  % }
+  \begin{itemize}
+    \item API-Standard für Geodaten vom Open Geospatial Consortium.
+    \item Wird von Simplex4TwIS genutzt, um Daten des Realitätsmodells und SimplexSzenarios auszugeben.
+    \item Für den Block-Editor werden Teile des Entwurfs "OGC API - Features - Part 3: Filtering" genutzt:
+          \begin{itemize}
+            \item Common Query Language (CQL)
+            \item Funktionen
+            \item Queryables
+          \end{itemize}
+    \item Objekt- und Verbindungsklassen im Realitätsmodell werden in der API als \textit{collections} ausgegeben, Objekte und Verbindungen sind deren \textit{items}.
+  \end{itemize}
+
+  \Note{
+    \item auch Importtabellen können über die API als collection ausgelesen werden
+  }
 
 \end{frame}
+
+% \begin{frame}
+%   \frametitle{Common Query Language (CQL)}
+%   \begin{itemize}
+%     \item Eingeführt zur Angabe von Filterbedingungen bei Anfragen von OGC API-Dienste.
+%     \item Inhaltlich analog zur \texttt{WHERE}-Klausel in SQL.
+%     \item Unterstützt boolsche Prädikate, Textvergleiche, zeitliche und raumbezogen Datentypen und Operatoren.
+%   \end{itemize}
+%
+%   \Note{
+%     \item Textversion und JSON
+%     \item Kann um Prädikate, Operatoren und Datentypen erweitert werden
+%   }
+%
+% \end{frame}
+%
+% \begin{frame}
+%   \frametitle{Funktionen}
+%
+%   \begin{itemize}
+%     \item Serverseitige Möglichkeit, CQL zu erweitern.
+%     \item Syntax ähnelt typischen Programmier- und Abfragesprachen.
+%     \item API informiert unter \texttt{/functions}-Endpunkt über verfügbare Funktionen, inklusive Name, Parameter- und Rückgabetypen.
+%   \end{itemize}
+%
+%   \Note{
+%     \item Syntax ähnelt jedenfalls in der TEXT-Version von CQL
+%     \item optional können auch weitere Metadaten wie Beschreibungen zur Funktion und zu den einzelnen Parametern ausgegeben werden
+%     \item Block-Editor nutzt diese Resource, um die verfügbaren Funktionen abzufragen und aufzulisten
+%   }
+%
+% \end{frame}
+%
+% \begin{frame}
+%   \frametitle{Queryables}
+%
+%   \begin{itemize}
+%     \item Alle abfragbaren Felder einer Resource im API-Features-Dienst.
+%     \item Für jede collection können so Metadaten abgefragt werden.
+%     \item In Simplex4TwIS haben somit Importtabellen und Objektklassen eine gemeinsame Schnittstelle, über die die interne Struktur bekannt gegeben wird.
+%   \end{itemize}
+%
+%   \Note{
+%     \item gemeinsame Schnittstelle wichtig für Block-Editor, da sowohl Importtabellen als auch Objektklassen als Input für Editor genutzt werden können
+%   }
+%
+% \end{frame}

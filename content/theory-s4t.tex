@@ -9,20 +9,19 @@
   \end{figure}
 
   \Note{
-      \item betrachten Simplex4TwIS aus Sicht der Daten, sieht so aus
-      \item Aus verschiedenen Dateiformaten
+    \item betrachten Simplex4TwIS aus Sicht der Daten, sieht so aus
+    \item Aus verschiedenen Dateiformaten
   }
 
 \end{frame}
 
 \begin{frame}
+  \frametitle{Realitätsmodell}
 
   \begin{itemize}
-    \item \textbf{Realitätsmodell}: Objektorientiertes und graphenbasiertes Datenmodell.
-      \begin{itemize}
-        \item \textbf{Harmonisiert}: Objekte, Attribute und Verbindungen besitzen immer gleiche Datenstrukturen.
-        \item \textbf{Atomar}: Jede Dateneinheit wird als Objektklasse abgebildet.
-      \end{itemize}
+    \item Objektorientiertes und graphenbasiertes Datenmodell.
+    \item \textbf{Harmonisiert}: Objekte, Attribute und Verbindungen besitzen immer gleiche Datenstrukturen.
+    \item \textbf{Atomar}: Jede Dateneinheit wird als Objektklasse abgebildet.
   \end{itemize}
 
   \Note{
@@ -30,6 +29,47 @@
     \item zusätzliche Informationen über Sachattribute, welche in den Metadaten über Standardfelder beschrieben werden
     \item Datenmodell orientiert sich nicht an fachspezifischen Anforderungen
     \item anwendungsspezifische Auswertungen basierend auf Realitätsmodell führen dazu dass keine fachspezifischen Modelle mehr benötigt werden
+    \item Bereitstellung der Daten über API-Features Dienst (zurück klicken)
+  }
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Laden \& Konvertieren}
+
+  \begin{itemize}
+    \item Verschiedene Dateiformate und API-Features-Dienste können in Datenbanktabellen geladen werden.
+    \item Konvertierungen werden genutzt, um aus den Tabellen einzelne Objekte im Realitätsmodell zu erstellen.
+    \item Dazu werden für jedes Eingangsformat \textit{Konvertierungsvorschriften} benötigt.
+  \end{itemize}
+
+  \Note{
+    \item Laden von verschiedenen Dateiformaten (CSV, JSON, SHP) oder API-Diensten (API-Features) in Datenbanktabellen
+    \item Dabei werden Daten in einzelne Bestandteile zerlegt
+    \item Dann Erstellen von Konvertierungen, die aus den Tabellen einzelne Objekte gemäß des Realitätsmodell auslesen
+    \item Dazu muss eine Konvertierungsvorschrift definiert werden
+    \item Das sind die $m$ Importe vom Anfang
+    \item Das soll durch den entwickelten Block-Editor vereinfacht werden
+    \item nach dem Laden existieren Objekte in Realitätsmodell, API Dienst
+    \item sind also schon nach diesem Schritt zugänglich, ohne sie weiter für Export vorbereiten zu müssen
+    \item \textrightarrow ABER wenn komplexe Auswertung benötigt werden, SimplexSzenarios
+  }
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{SimplexSzenarios}
+
+  \begin{itemize}
+    \item Zusammenstellung von Daten im Realitätsmodell zu fachspezifischen Auswertungen und standardisierten Formaten.
+    \item Für jedes Ausgabeformat werden \textit{Bildungsvorschriften} benötigt.
+  \end{itemize}
+
+  \Note{
+    \item Dazu können mehrere Klassen aus dem Realitätsmodell gleichzeitig abgefragt werden, basierend auf den bestehenden Verbindungen
+    \item Umsetzung von Berechnungen
+    \item Bedienen von standardisierten Formaten
+    \item Bereitstellung über API-Features Dienst
   }
 
 \end{frame}

@@ -1,6 +1,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
+\usepackage{csquotes} % Kontextabhängige Anführungszeichen
 \usepackage{tikz} % venn diagram
 % \usepackage{enotez} % image sources (instead of endnotes for linking)
 \usepackage{pgfplotstable} % csv to table
@@ -26,6 +27,8 @@
 
 \usetikzlibrary{calc}
 \usepgfplotslibrary{statistics} % Boxplots
+
+\MakeOuterQuote{"} % könnte zu Problemen führen
 
 % colors
 \definecolor{s4d-blue}{HTML}{055DA9}
